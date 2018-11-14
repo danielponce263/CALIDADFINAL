@@ -1,0 +1,236 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background:#F0EFED;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Barra de Navegacion Horizontal */
+
+img.logo{
+    width:180px;
+    height: 40px;
+    margin-left: 20px
+}
+
+
+
+#header .nav-top{
+    width: 100%;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #56AEEC;
+    font-weight:bold;
+    font-size: 16px;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+
+ul.nav-top li {
+    float: left;
+}
+
+ul.nav-top li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size:14px;
+}
+
+ul.nav-top li a:hover:not(.active) {
+    background-color: #ddd;
+    color: black;
+}
+
+ul.nav-top li a.active {
+    background-color: #4CAF50;
+}
+
+
+
+/* Barra de navegacion verticual*/
+
+ul.nav-lateral{
+    height: 100%;
+    width: 250px;
+    margin-top: 45px;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #0C202E;
+    overflow-x: hidden;
+    font-size: 13px;
+}
+
+
+
+nav ul{
+    display: block;
+
+}
+
+ul.nav-lateral li a {
+    display: block;
+    color: white;
+    text-align: -moz-left;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+img.activo{
+    margin: 20px 62px;
+}
+
+img.b{
+    width: 18px;
+    height: 15px;
+    margin: 0px 18px 0px 10px;
+    vertical-align: center;
+}
+
+img.c{
+    width: 15px;
+    height: 14px;
+    position: absolute;
+    right: 15px;
+    padding: 4px 0px;
+}
+
+ul.nav-lateral a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+ul.nav-lateral ul{
+    display: none;
+}
+
+ul.nav-lateral li:hover ul{
+    display: block;
+    position: absolute;
+}
+
+ul.nav-lateral li:hover ul{
+    display: none;
+    position: relative;
+}
+
+ul.nav-lateral ul {
+    background: rgba(0,0,0,1);
+}
+
+ul.nav-lateral ul a{
+    padding: 9px 45px;
+}
+
+
+.secciones {
+    margin-left: 250px;
+    padding-left: 20px;
+    position: absolute;
+}
+
+
+
+/* formularios*/
+
+/* form1 seccion de inicio */
+
+.ini-gestionar{
+    display: inline;
+}
+
+.ini-gestionar button a{
+    height: 300px;
+    width: 400px;
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color:white;
+
+}
+
+
+
+
+/*
+.secciones article#tab1{
+    margin: 60px 80px;
+}
+
+.secciones article#tab1 div.catalogo,div.usuarios,div.reportes {
+    display: inline-block;
+    height: 80px;
+    width: 200px;
+    border: 2px solid red;
+    padding: 25px 25px 15px 25px;
+
+}
+
+.secciones article#tab2{
+    margin: 60px 80px;
+}
+*/
+
+/* FORMULARIO 5*/
+
+
+.nav-form{
+    margin-top: 80px;
+    margin-left: 17px;
+}
+
+.nav-span{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.nav-a{
+    font-size: 15px;
+    font-weight: normal;
+    color: #111;
+}
+
+.nav-a1{
+    font-size: 15px;
+    font-weight: bold;
+    color: #111;
+}
+
+.h2-titulo{
+    margin-left: 17px;
+    color: #56AEEC;
+}
+
+
+
+.btn__enviar{
+    background: crimson;
+    color: #fff;
+    margin: auto;
+    padding: 10px 40px;
+    margin-top: 15px;
+    margin-left: 540px;
+}
+
+.btn__enviar:active{
+    transform: scale(1.05);
+}
+
+
+
+

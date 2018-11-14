@@ -1,0 +1,38 @@
+<?php
+include 'conexion.php';
+$id_cliente=$_POST["id_cliente"];
+$dni_cliente=$_POST["dni_cliente"];
+$id_producto=$_POST["id_producto"];
+$nombre_producto=$_POST["nombre_producto"];
+$precio_producto=$_POST["precio_producto"];
+$cantidad_ventas=$_POST["cantidad_venta"];
+
+var_dump($id_producto);
+$insertar2="INSERT INTO ventas(id_cliente) VALUES ('$id_cliente')";
+
+$insertar3="SELECT id_ventas FROM ventas WHERE "
+/*
+$insertar2="SELECT id_ventas FROM ventas ORDER by id_ventas DESC LIMIT 1";
+
+$result=mysqli_query($conexion,$insertar2);
+$row=mysqli_fetch_array($result);
+$nombre = $row["id_ventas"];
+var_dump($nombre);
+
+exit(1);*/
+
+$insertar= "INSERT INTO venta_espera(dni_cliente,id_producto,nombre_producto,precio_producto,cantidad_ventas) VALUES ('$dni_cliente','$id_producto','$nombre_producto','$precio_producto','$cantidad_ventas')";
+
+$insertar2="INSERT INTO ventas(id_cliente) VALUES ('$id_cliente')";
+
+$insertar3="SELECT id_ventas FROM ventas WHERE "
+
+$resultado=mysqli_query($conexion,$insertar);      
+if(!$resultado){
+    echo 'Error al registrarse';
+}else{
+    echo 'Usuario registrado exitosamente';
+}      
+
+?>
+

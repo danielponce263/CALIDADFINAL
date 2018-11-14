@@ -1,0 +1,14 @@
+thead{
+    background-color: rgb(126, 183, 223);
+    border-bottom: solid 5px rgb(32, 119, 180);
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;
+}
+
+tr:hover{
+    background-color: rgb(15, 77, 121);
+    color: white;
+}

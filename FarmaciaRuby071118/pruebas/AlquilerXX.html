@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>MaquinariasRocky-Alquiler</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="diseño/Alqui.css" >
+    <link rel="stylesheet" type="text/css" href="diseño/tablas.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+       var parametro;
+       function popup(){
+           parametro=window.open("php/ventana_maquina.php","","width=400,height=300");
+           parametro.document.getElementById('1').value="id_maquina";
+           parametro.document.getElementById('2').value="nome";
+           parametro.document.getElementById('3').value="marca";
+       }
+
+       function popup1(){
+           parametro=window.open("php/ventana_cliente.php","","width=400,height=300");
+           parametro.document.getElementById('1').value="id_cliente";
+           parametro.document.getElementById('2').value="names";
+           parametro.document.getElementById('3').value="apPat";
+           parametro.document.getElementById('4').value="dni";
+
+       }
+   </script> 
+</head>
+<body>
+
+
+<!-- NAVEGADOR HORIZONALTAL -->
+<header id="header">
+<ul class="nav-top">
+    <li><img src="imagenes/logo_rocky.png" alt="logo rocky" class="logo"></li>
+    <li style="margin-left:50px; margin-top:5px; "><img src="imagenes/menu_2.png" alt=""></li>
+    <li style="float:right"><a href="#"><img src="imagenes/boton-salir.png "> Salir</a></li>
+    <li style="float:right"><a href="#"><img src="imagenes/rec.png"> Lozano Rodriguez, David Gustavo</a></li>
+    <li style="float:right"><a href="#"><img src="imagenes/cronometro.png">  00:10:30</a></li>
+</ul>
+
+</header>
+
+<!-- NAVEGADOR LATERAL -->
+<nav>
+    <ul class="nav-lateral">
+
+        <li style="margin-bottom: 25px" ><img src="imagenes/usuario.png" class="activo">
+            <span style="color: aqua;text-align: center;margin-left: 75px;margin-bottom: 20px">Jefa de Alquiler</span></li>
+        <li class="h"><a href="#tab1" class="x"><img src="imagenes/icon-inicio.png" class="b">Inicio</a></li>
+        <li class="h"><a href="#tab2" class="x"><img src="imagenes/icon-informacion.png" class="b">Mi Informacion</a></li>
+        <li class="submenu"><a href="#"><img src="imagenes/icon-catalogo.png" class="b">Orden de Alquiler<img src="imagenes/abajo1.png" class="c"></a>
+            <ul>
+                <li class="h"><a href="#tab3" class="x"><img src="imagenes/añadir.png" class="b">Añadir Alquiler</a></li>
+                <li class="h"><a href="#tab4" class="x"><img src="imagenes/ojo.png" class="b">Visualizar Alquiler</a></li>
+            </ul>
+        </li>
+        <li class="submenu"><a href="#"><img src="imagenes/icon-nuevo.png" class="b">Clientes<img src="imagenes/abajo1.png" class="c"> </a>
+            <ul>
+                <li class="h"><a href="#tab5" class="x"><img src="imagenes/añadir.png" class="b">Añadir Cliente</a></li>
+                <li class="h"><a href="#tab6" class="x"><img src="imagenes/ojo.png" class="b">Visualizar Cliente</a></li>
+            </ul>
+        </li>
+        <li class="submenu"><a href="#"><img src="imagenes/icon-venta.png" class="b">Reportes<img src="imagenes/abajo1.png" class="c"></a>
+            <ul>
+                <li class="h"><a href="#tab7" class="x"><img src="" alt="">Reporte Ventas</a></li>
+                <li class="h"><a href="#tab8" class="x"><img src="" alt="">Reporte Mantenimiento</a></li>
+            </ul>
+        </li>
+        <li><a href="#"><img src="imagenes/proveedor.png" class="b">Proveedores</a></li>
+        <li><a href="#"><img src="imagenes/icon-ajustes.png" class="b">Ajustes</a></li>
+    </ul>
+
+</nav>
+
+<!-- CONTENIDO DE LA PAGINA -->
+<div class="secciones">
+    <article id="tab1">
+        <h1>INICIO</h1>
+        <div class="usuarios">GESTIONAR USUARIO</div>
+        <div class="reportes">GESTINAR REPORTES</div>
+    </article>
+    <article id="tab2">
+        <h1>MI INFORMACION</h1>
+    </article>
+    <article id="tab3">
+    <div class="nav-form">
+        <h5 class="barra">INICIO</h5><span class="barra-1">></span><h5 class="barra">ORDEN DE ALQUILER</h5><span class="barra-1">></span><h5 class="barra">Añadir Alquiler</h5>
+        </div>
+        <h2 class="h2-titulo">Añadir Alquiler</h2>
+        <form action="php/save_alquiler.php" method="post" class="form-register" onsubmit="return validar()" name="form3" enctype="multipart/form-data">
+            <h2 class="form__titulo">REGISTRAR ALQUILER</h2>
+            <div class="contenedor__inputs">
+                <input type="button" value="Maquina" class="input-100" onclick="popup()"  required>
+                <input type="text" id="id_maquina" name="id_maquina" placeholder="Nombre_Maquina" class="input-48" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre_Maquina" class="input-48" required>
+                <input type="text" id="marca" name="marca" placeholder="Marca_Maquina" class="input-48" required>
+                <input type="button" value="Cliente" class="input-100" onclick="popup1()"   required>
+                <input type="text" id="id_cliente" name="id_cliente" placeholder="Nombre_Maquina" class="input-48" required>
+                <input type="text" id="nom_cliente" name="nom_cliente   " placeholder="Nombre_Cliente" class="input-100" required >
+                <input type="text" id="apPaterno" name="apPaterno" placeholder="ApellidoPaterno" class="input-48" required>
+                <input type="text" id="dni" name="dni" placeholder="Dni" class="input-48" required >
+                <input type="text" id="dias" name="dias" placeholder="Numero_dias" class="input-100" required>
+                <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" class="input-100" required>
+                <input type="submit" value="Registrar" class="btn__enviar">
+            </div>
+        </form>
+    </article>
+
+    <article id="tab4">
+    <div class="nav-form">
+        <h5 class="barra">INICIO</h5><span class="barra-1">></span><h5 class="barra">Alquiler</h5><span class="barra-1">></span><h5 class="barra">Visualizar Alquiler</h5>
+        </div>
+        <h2 class="h2-titulo">Visualizar Alquiler</h2>
+        <div id="main-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th><th class="colum-nombre">Nombre_Maquina</th><th>Marca_Maquina</th><th>Nombre_Cliente</th><th>Apellido_Paterno</th><th>dni</th><th>Num_dias</th><th>Descripcion</th>
+                    </tr>
+                </thead>
+                <?php
+                include 'php/conexion.php';
+                $sql="SELECT al.id_alquiler, m.nombre_maquina, m.marca, c.nombre_cliente, c.apPaterno, c.dni, al.ndias, al.descripcion    
+                      from alquiler al
+                      JOIN maquina m on al.id_maquina=m.id_maquina  
+                      JOIN cliente c on al.id_cliente=c.id_cliente ";
+
+                $result=mysqli_query($conexion,$sql);
+
+                while($mostrar=mysqli_fetch_array($result)){
+                ?>
+                <tr>
+                    <td><?php echo $mostrar['id_alquiler']  ?></td>
+                    <td><?php echo $mostrar['nombre_maquina']  ?></td>
+                    <td><?php echo $mostrar['marca']  ?></td>
+                    <td><?php echo $mostrar['nombre_cliente']  ?></td>
+                    <td><?php echo $mostrar['apPaterno']  ?></td>
+                    <td><?php echo $mostrar['dni']  ?></td>
+                    <td><?php echo $mostrar['ndias']  ?></td>
+                    <td><?php echo $mostrar['descripcion']  ?></td>
+                <?php
+                }
+                ?>
+            </table>
+    </article>
+    <article id="tab5">
+    <div class="nav-form">
+        <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">CLIENTE</a><span class="nav-span">></span><a href="#tab" class="nav-a1">Añadir Cliente</a>
+        </div>
+        <div class="h2-titulo"><h2>Añadir Cliente</h2></div>
+        <div class="container">
+        <h3>Nuevo Cliente</h3>
+        <form class="form-horizontal" action="php/clientes.php" method="post" onsubmit="return validar()">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="nombre_cliente">Nombre:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="nombre_cliente" placeholder="Ingrese nombre" name="nombre_cliente" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="apPaterno">Apellido Paterno:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="apPaterno" placeholder="Ingrese Apellido Paterno" name="apPaterno" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="apMaterno">Apellido Materno:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="apMaterno" placeholder="Ingrese Apellido Materno" name="apMaterno" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="nombre">Correo:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="correo" placeholder="Ingrese correo" name="correo" required>
+                    <button type="button" class="btn btn-primary">Verificar</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="dni">DNI:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="dni" placeholder="Ingrese DNI" name="dni" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="telefono">Telefono:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="telefono" placeholder="Ingrese Telefono" name="telefono" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="direccion">Dirección:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="direccion" placeholder="Ingrese Dirección" name="direccion" required>
+                </div>
+            </div>
+
+            <input type="submit" value="Registrar" class="btn__enviar">
+            
+        </form>
+    </article>
+    <article id="tab6">
+        <div class="nav-form">
+            <h5 class="barra">INICIO</h5><span class="barra-1">></span><h5 class="barra">USUARIO</h5><span class="barra-1">></span><h5 class="barra">Visualizar Usuario</h5>
+        </div>
+        <h2 class="h2-titulo">Visualizar Usuario</h2>
+        <div id="main-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th class="colum-nombre">Nombre</th>
+                        <th class="colum-nombre">Ap. Paterno</th>
+                        <th>Ap. Materno</th>
+                        <th>Correo</th>
+                        <th>dni</th>
+                        <th>telefono</th>
+                        <th>direccion</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <?php
+                include 'php/conexion.php';
+                $sql="SELECT * FROM cliente";
+                $result=mysqli_query($conexion,$sql);
+
+                while($mostrar=mysqli_fetch_array($result)){
+                ?>
+                <tr>
+                    <td><?php echo $mostrar['id_cliente']  ?></td>
+                    <td><?php echo $mostrar['nombre_cliente']  ?></td>
+                    <td><?php echo $mostrar['apPaterno']  ?></td>
+                    <td><?php echo $mostrar['apMaterno']  ?></td>
+                    <td><?php echo $mostrar['correo']  ?></td>
+                    <td><?php echo $mostrar['dni']  ?></td>
+                    <td><?php echo $mostrar['telefono']  ?></td>
+                    <td><?php echo $mostrar['direccion']  ?></td>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
+    </article>
+    <footer>
+
+    </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="comportamiento/contenido.js"></script>
+<script src="comportamiento/menu.js"></script>
+</body>
+</html>
