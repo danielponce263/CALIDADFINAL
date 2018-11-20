@@ -1,16 +1,20 @@
 <?php
 include 'conexion.php';
 
-$nombre=$_POST["nombre_cliente"];
-$apPaterno=$_POST["apPaterno"];
-$apMaterno=$_POST["apMaterno"];
-$correo=$_POST["correo"];
-$dni=$_POST["dni"];
-$telefono=$_POST["telefono"];
-$direccion=$_POST["direccion"];
+$nombre_cliente=$_POST["nombre_cliente"];
+$apellidos_cliente=$_POST["apellidos_cliente"];
+$correo_cliente=$_POST["correo_cliente"];
+$dni_cliente=$_POST["dni_cliente"];
+$telefono_cliente=$_POST["telefono_cliente"];
 
+//var_dump($nombre_cliente);
+//var_dump($apellidos_cliente);
+//var_dump($correo_cliente);
+//var_dump($dni_cliente);
+//var_dump($telefono_cliente);
+//exit(1);
 
-$insertar= "INSERT INTO cliente(nombre_cliente,apPaterno,apMaterno,correo,dni,telefono,direccion) VALUES ('$nombre','$apPaterno','$apMaterno','$correo','$dni','$telefono','$direccion')";
+$insertar="INSERT INTO cliente(nombre_cliente,apellidos_cliente,correo_cliente,dni_cliente,telefono_cliente) VALUES ('$nombre_cliente','$apellidos_cliente','$correo_cliente','$dni_cliente','$telefono_cliente')";
 
 $resultado=mysqli_query($conexion,$insertar);      
 if(!$resultado){

@@ -3,7 +3,7 @@
 $server = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'rocky';
+$database = 'ruby';
 
 $conn = mysqli_connect($server, $username, $password, $database) or die('Error al conectar con MySQL Server.');
 

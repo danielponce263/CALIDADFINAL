@@ -94,18 +94,12 @@
         </li>
         <li class="submenu"><a href="#"><img src="imagenes/icon-nuevo.png" class="b">Gestion de cliente <img src="imagenes/abajo1.png" class="c"> </a>
             <ul>
-                <li class="h"><a href="#tab5" class="x"><img src="imagenes/añadir.png" class="b">Añadir Cliente</a></li>
-                <li class="h"><a href="#tab6" class="x"><img src="imagenes/ojo.png" class="b">Visualizar Cliente</a></li>
+                <li class="h"><a href="#tab5" class="x"><img src="imagenes/añadir.png" class="b">Registrar Cliente</a></li>
+                <li class="h"><a href="#tab6" class="x"><img src="imagenes/ojo.png" class="b">Buscar Cliente</a></li>
+                <li class="h"><a href="#tab7" class="x"><img src="imagenes/añadir.png" class="b">Buscar Historial de Compras</a></li>
+                <li class="h"><a href="#tab8" class="x"><img src="imagenes/añadir.png" class="b">Generar Reporte de Compras</a></li>
             </ul>
         </li>
-        <li class="submenu"><a href="#"><img src="imagenes/icon-venta.png" class="b">Reportes<img src="imagenes/abajo1.png" class="c"></a>
-            <ul>
-                <li class="h"><a href="#tab9" class="x"><img src="" alt="">Reporte Ventas</a></li>
-                <li class="h"><a href="#tab10" class="x"><img src="" alt="">Reporte Mantenimiento</a></li>
-            </ul>
-        </li>
-        <li><a href="#"><img src="imagenes/proveedor.png" class="b">Proveedores</a></li>
-        <li><a href="#"><img src="imagenes/icon-ajustes.png" class="b">Ajustes</a></li>
     </ul>
 
 </nav>
@@ -113,9 +107,10 @@
 <!-- CONTENIDO DE LA PAGINA -->
 <div class="secciones">
     <article id="tab1">
-        <h1>INICIO</h1>
-        <div class="usuarios">GESTIONAR USUARIO</div>
-        <div class="reportes">GESTINAR REPORTES</div>
+        <br/>
+        <br/>
+        <br/>
+        <h1>BIENVENIDO!</h1>
     </article>
     <article id="tab2">
         <h1>MI INFORMACION</h1>
@@ -260,45 +255,45 @@
     <article id="tab5">
     <div class="nav-form">
         <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">GESTION DE CLIENTE</a><span class="nav-span">></span><a href="#tab" class="nav-a1">Registrar Cliente</a>
-        </div>
+        </div><br>
         <div class="h2-titulo"><h2>Registrar Cliente</h2></div>
+        <br><br>
         <div class="container">
-        <h3>Nuevo Cliente</h3>
         <form class="form-horizontal" action="php/clientes.php" method="post" onsubmit="return validar()">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="nombre_cliente">Nombre:</label>
+                <label class="control-label col-sm-2" for="nombre_cliente">Nombres:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="nombre_cliente" placeholder="Ingrese nombre..." name="nombre_cliente" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="apPaterno">Apellidos:</label>
+                <label class="control-label col-sm-2" for="apellidos_cliente">Apellidos:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="apPaterno" placeholder="Ingrese Apellido Paterno" name="apPaterno" required>
+                    <input type="text" class="form-control" id="apellidos_cliente" placeholder="Ingrese Apellidos..." name="apellidos_cliente" required>
                 </div>
             </div>
 
-             <div class="form-group">
-                <label class="control-label col-sm-2" for="nombre">Correo:</label>
+           <div class="form-group">
+                <label class="control-label col-sm-2" for="correo_cliente">Correo:</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="correo" placeholder="Ingrese correo" name="correo" required>
-                    <br>
-                    <button type="button" class="btn btn-primary">Verificar</button>
-                </div>
-            </div>
+                    <input type="email" class="form-control" id="correo_cliente" placeholder="Ingrese su correo..." name="correo_cliente" required>
 
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="dni">DNI:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="dni" placeholder="Ingrese DNI" name="dni" required>
+                    <!--<button type="button" class="btn btn-primary">Verificar</button>-->
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="telefono">Telefono:</label>
+                <label class="control-label col-sm-2" for="dni_cliente">DNI:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="telefono" placeholder="Ingrese Telefono" name="telefono" required>
+                    <input type="text" class="form-control" id="dni_cliente" placeholder="Ingrese su DNI..." name="dni_cliente" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="telefono_cliente">Teléfono:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="telefono_cliente" placeholder="Ingrese su Telefono..." name="telefono_cliente" required>
                 </div>
             </div>
 
@@ -311,6 +306,18 @@
         <a href="#" class="nav-a">INICIO</a><span class="nav-span"></span><a href="#" class="nav-a">GESTION DE CLIENTE</a><span class="nav-span"></span><a href="#tab" class="nav-a1">Buscar Cliente</a>
         </div>
         <h2 class="h2-titulo">Visualizar Clientes</h2>
+        <br>
+
+        <form method='post'>
+        <div class="form-group">
+                <label class="control-label col-sm-2" for="txtFiltro">Ingrese Nombre o DNI:</label>
+                <div class="col-sm-3">          
+                    <input type="text" class="form-control" id="txtFiltro" name="txtFiltro" placeholder="Ingresar Nombre o DNI" required>
+                </div>
+                <input type="submit" name="btnBuscar" value="Buscar" class="btn btn-primary">
+        </div>      
+        </form>
+       
         <div class="container">
         <h3>Lista de Clientes</h3>
         <p>Lista de los Clientes de la Botica</p> 
@@ -318,29 +325,37 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
+                        <th>DNI</th>
+                        <th>Telefono</th>
                         <th>Correo</th>
-                        <th>dni</th>
-                        <th>telefono</th>
-                        <th>Accion</th>
                     </tr>
                 </thead>
                 <?php
                 include 'php/conexion.php';
-                $sql="SELECT * FROM cliente";
-                $result=mysqli_query($conexion,$sql);
+
+                if (isset($_POST['btnBuscar'])) {
+                    $filtro=$_POST['txtFiltro'];
+                    $sql="SELECT * FROM cliente where dni_cliente='$filtro' or nombre_cliente like '%$filtro%'";
+                    $result=mysqli_query($conexion,$sql);
+                }else{
+                    $sql="";
+                }
+
+                
 
                 while($mostrar=mysqli_fetch_array($result)){
                 ?>
                 <tr>
                     <td><?php echo $mostrar['id_cliente']  ?></td>
                     <td><?php echo $mostrar['nombre_cliente']  ?></td>
-                    <td><?php echo $mostrar['apPaterno']  ?></td>
-                    <td><?php echo $mostrar['correo']  ?></td>
-                    <td><?php echo $mostrar['dni']  ?></td>
-                    <td><?php echo $mostrar['telefono']  ?></td>
+                    <td><?php echo $mostrar['apellidos_cliente']  ?></td>
+                    <td><?php echo $mostrar['dni_cliente']  ?></td>
+                    <td><?php echo $mostrar['telefono_cliente']  ?></td>
+                    <td><?php echo $mostrar['correo_cliente']  ?></td>
+
                 </tr>
                 <?php
                 }
@@ -352,26 +367,25 @@
 
     <article id="tab7">
         <div class="nav-form">
-            <h5 class="barra">INICIO</h5><span class="barra-1">></span><span class="barra-1">></span><h5 class="barra">Buscar Historial de Ventas</h5>
-        </div>
-        <h2 class="h2-titulo">Visualizar Historial de Ventas</h2>
+        <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">GESTION DE CLIENTE</a><span class="nav-span">></span><a href="#tab" class="nav-a1">Buscar Historial de Ventas</a>
+        </div><br>
+        <div class="h2-titulo"><h2>Buscar Historial de Ventas</h2></div>
+
+        <!--Esta parte mostrará a todos los clientes registrados-->
         <div class="container">
             <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th class="colum-nombre">Nombre</th>
-                        <th class="colum-nombre">Ap. Paterno</th>
-                        <th>Ap. Materno</th>
+                        <th class="colum-nombre">Apellidos</th>
                         <th>Correo</th>
-                        <th>dni</th>
-                        <th>telefono</th>
-                        <th>Accion</th>
+                        <th>DNI</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
-                <br>
-                <button type="button"class="btn btn-primary" >BUSCAR</button>
+
+                <br><br>
 
                 <?php
                 include 'php/conexion.php';
@@ -381,13 +395,11 @@
                 while($mostrar=mysqli_fetch_array($result)){
                 ?>
                 <tr>
-                    <td><?php echo $mostrar['id_cliente']  ?></td>
                     <td><?php echo $mostrar['nombre_cliente']  ?></td>
-                    <td><?php echo $mostrar['apPaterno']  ?></td>
-                    <td><?php echo $mostrar['apMaterno']  ?></td>
-                    <td><?php echo $mostrar['correo']  ?></td>
-                    <td><?php echo $mostrar['dni']  ?></td>
-                    <td><?php echo $mostrar['telefono']  ?></td>
+                    <td><?php echo $mostrar['apellidos_cliente']  ?></td>
+                    <td><?php echo $mostrar['correo_cliente']  ?></td>
+                    <td><?php echo $mostrar['dni_cliente']  ?></td>
+                    <td><?php echo $mostrar['telefono_cliente']  ?></td>
                 </tr>
                 <?php
                 }
@@ -395,6 +407,73 @@
             </table>
             </div>
         </div>
+
+
+        <!--Esta parte mostrará los productos que han comprado los clientes-->
+        <br><br><br><br><br><br><br>
+        <h3>Lista de Compras del Cliente</h3>
+        <br><br>
+        <form method='post'>
+        <div class="form-group">
+                <label class="control-label col-sm-2" for="txtFiltro2">Ingrese Nombre o DNI:</label>
+                <div class="col-sm-3">          
+                    <input type="text" class="form-control" id="txtFiltro2" name="txtFiltro2" placeholder="Ingresar Nombre o DNI" required>
+                </div>
+                <input type="submit" name="btnFiltrar" value="Buscar" class="btn btn-primary">
+        </div>
+        </form>
+
+        <div class="container">
+        <form>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Numero_Venta</th>
+                        <th>Cliente</th>
+                        <th>DNI</th>
+                        <th>Importe</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <?php             
+                include 'php/conexion.php';
+                    //if (isset($_POST['btnFiltrar'])) {
+
+                      //  $filtro2=$_POST['txtFiltro2'];  
+                        
+                        //$sql2="SELECT id_producto,nombre_producto,cantidad_ventas,precio_producto FROM venta_espera WHERE dni_cliente='$filtro2'";
+                        //}
+                    if (isset($_POST['btnFiltrar'])) {
+                        $filtro2=$_POST['txtFiltro2'];
+                        $sql2= "SELECT v.id_ventas, concat (c.nombre_cliente,' ', c.apellidos_cliente) as cliente, c.dni_cliente, v.venta_total
+                        FROM ruby.ventas v JOIN  ruby.cliente c on v.id_cliente=c.id_cliente";
+
+                    }else{
+                        $sql2="";
+                    }
+                
+                $result2=mysqli_query($conexion,$sql2);
+
+                while($mostrar2=mysqli_fetch_array($result2)){
+                ?>
+                <tr>
+                    <td><?php echo $mostrar['id_ventas']  ?></td>
+                    <td><?php echo $mostrar['cliente']  ?></td>
+                    <td><?php echo $mostrar['dni_cliente']  ?></td>
+                    <td><?php echo $mostrar['venta_total']  ?></td>
+                    <td>
+                        <input type="submit" value="Register" name="submit">
+                    </td>
+
+                </tr>
+                <?php
+                }
+                ?>
+        </table>
+        </form>
+        </div>
+   
+        <br><br><br><br>
     </article>
 
     <article id="tab8">
@@ -402,6 +481,18 @@
         <a href="#" class="nav-a">INICIO</a><span class="nav-span"></span><a href="#" class="nav-a">Venta</a><span class="nav-span"></span><a href="#tab" class="nav-a1">Generar Historial de Venta</a>
         </div>
         <h2 class="h2-titulo">Generar Reporte de Venta</h2>
+        <br>
+
+        <form method='post'>
+        <div class="form-group">
+                <label class="control-label col-sm-2" for="txtFiltro2">Ingrese Nombre o DNI:</label>
+                <div class="col-sm-3">          
+                    <input type="text" class="form-control" id="txtFiltro2" name="txtFiltro2" placeholder="Ingresar Nombre o DNI" required>
+                </div>
+                <input type="submit" name="btnFiltrar" value="Buscar" class="btn btn-primary">
+        </div>
+        </form>
+
         <div class="container">
         <h3>Reporte de Ventas</h3>
         <p>Lista de productos</p> 
@@ -413,35 +504,29 @@
                         <th>Producto</th>
                         <th>Nombre</th>
                         <th>Cantidad</th>
-                        <th>Fecha</th>
                         <th>Importe</th>
-                        <th>Acción</th>
                     </tr>
                 </thead>
                 <?php
                 include 'php/conexion.php';
-                $sql="select 
-                v.id_venta as id_venta,
-                concat(c.apPaterno,' ',c.apMaterno,' ',c.nombre_cliente) as nombre,
-                c.dni as dni,
-                m.nombre_maquina as maquina,
-                m.marca as marca,
-                v.total
-                from venta v 
-                left join cliente c
-                on v.id_cliente = c.id_cliente
-                left join maquina m 
-                on v.id_maquina = m.id_maquina;";
-                $result=mysqli_query($conexion,$sql);
+                    if (isset($_POST['btnFiltrar'])) {
 
-                while($mostrar=mysqli_fetch_array($result)){
+                        $filtro2=$_POST['txtFiltro2'];
+                        $sql2="SELECT id_producto,nombre_producto,cantidad_ventas,precio_producto FROM venta_espera WHERE dni_cliente='$filtro2'";
+                        $result2=mysqli_query($conexion,$sql2);
+                    }else{
+                        $sql2="";
+                    }
+                
+                
+
+                while($mostrar2=mysqli_fetch_array($result2)){
                 ?>
                 <tr>
-                    <td><?php echo $mostrar['id_producto']  ?></td>
-                    <td><?php echo $mostrar['n_producto']  ?></td>
-                    <td><?php echo $mostrar['cantidad']  ?></td>
-                    <td><?php echo $mostrar['fecha']  ?></td>
-                    <td><?php echo $mostrar['importe']  ?></td>
+                    <td><?php echo $mostrar2['id_producto']  ?></td>
+                    <td><?php echo $mostrar2['nombre_producto']  ?></td>
+                    <td><?php echo $mostrar2['cantidad_ventas']  ?></td>
+                    <td><?php echo $mostrar2['precio_producto']  ?></td>
                     <td>
                         <input type="submit" value="Register" name="submit">
                     </td>
